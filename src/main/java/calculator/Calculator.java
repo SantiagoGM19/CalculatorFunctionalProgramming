@@ -11,6 +11,14 @@ public class Calculator {
         //Substracting
         IOperation sub = (x, y) -> x-y;
 
+        //Multiplying
+        IOperation mul = (x, y) -> multiply(x, y, sum);
+
+    }
+
+    public static Integer multiply(Integer x, Integer y, IOperation sum){
+        return y==0 ? 0 : sum.operate(x,0) + multiply(x, y-1, sum);
+
     }
 
 
